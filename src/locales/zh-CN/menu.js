@@ -10,7 +10,7 @@ export default {
   'menu.dashboard': 'Dashboard',
   'menu.monitor': '监控页',
   'menu.overview': '总览页',
-  // 'menu.warnings': '预警页',
+  'menu.search': '查询页',
   'menu.dashboard.analysis': '分析页',
   'menu.dashboard.monitor': '监控页',
   'menu.dashboard.workplace': '工作台',

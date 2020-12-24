@@ -539,8 +539,8 @@ const TableList = () => {
           >
             更新
           </a>
-          <Divider type="vertical" />
-           <a href="https://pro.ant.design/">详情</a> {/* 导引至详情页面 */}
+          {/*<Divider type="vertical" />*/}
+          {/* <a href="https://pro.ant.design/">详情</a> /!* 导引至详情页面 *!/*/}
         </>
       ),
     },

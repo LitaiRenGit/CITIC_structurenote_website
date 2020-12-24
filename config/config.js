@@ -73,9 +73,9 @@ export default defineConfig({
               redirect: '/dashboard/analysis',
             },
             {
-              name: 'monitor',
+              name: 'search',
               icon: 'table',
-              path: '/monitor',
+              path: '/search',
               component: './ListTableList',
             },
             {

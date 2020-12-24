@@ -129,7 +129,7 @@ class EchartsTest extends Component {
       ],
       xAxis: [
         {
-          name: '到期年份',
+          name: '发行年份',
           type: 'category',
           gridIndex: 0,
           data: [],
