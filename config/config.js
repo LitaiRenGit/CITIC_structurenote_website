@@ -70,7 +70,7 @@ export default defineConfig({
           routes: [
             {
               path: '/',
-              redirect: '/dashboard/analysis',
+              redirect: '/overview', //首页
             },
             {
               name: 'overview',
