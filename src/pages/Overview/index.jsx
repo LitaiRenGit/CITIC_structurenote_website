@@ -264,7 +264,7 @@ class EchartsTest extends Component {
         // formatter: '{a} <br/>{b}: {c} ({d}%)'
       },
       legend:{
-        data: [],
+        data: ['存续天数','存续天数离群值','未终止合约距离到期天数','距离到期天数离群值'],
       },
       grid: [
         {left: '7%', right: '7%', width: 'auto', height: '75%'},// 折线图位置控制
@@ -282,7 +282,7 @@ class EchartsTest extends Component {
       }],
       yAxis: [
         {
-          name: '存续天数',
+          name: '天数',
           type: 'value',
           splitArea: {
             show: true
@@ -292,7 +292,7 @@ class EchartsTest extends Component {
       ],
       series: [
         {
-          name: 'boxplot',
+          name: '存续天数',
           type: 'boxplot',
           data: [],
           tooltip: {
@@ -309,10 +309,32 @@ class EchartsTest extends Component {
           }
         },
         {
-          name: 'outlier',
+          name: '存续天数离群值',
           type: 'scatter',
           data: [],
-        }
+        },
+        {
+          name: '未终止合约距离到期天数',
+          type: 'boxplot',
+          data: [],
+          tooltip: {
+            formatter: function (param) {
+              return [
+                param.name + ': ',
+                'upper: ' + param.data[5],
+                'Q3: ' + param.data[4],
+                'median: ' + param.data[3],
+                'Q1: ' + param.data[2],
+                'lower: ' + param.data[1]
+              ].join('<br/>');
+            }
+          }
+        },
+        {
+          name: '距离到期天数离群值',
+          type: 'scatter',
+          data: [],
+        },
       ],
     };
   }
@@ -450,10 +472,13 @@ class EchartsTest extends Component {
   handleChartStatisticsUpdate_3 = async (option,chart) => {
     try{
       await chartStatisticsRule_3({}).then((data)=>{
-        const box_data = prepareBoxplotData(data.y);
+        const survival_data = prepareBoxplotData(data.y1);
         this[option].xAxis[0].data=data.x;
-        this[option].series[0].data=box_data.boxData;
-        this[option].series[1].data=box_data.outliers;
+        this[option].series[0].data=survival_data.boxData;
+        this[option].series[1].data=survival_data.outliers;
+        const residual_data = prepareBoxplotData(data.y2);
+        this[option].series[2].data=residual_data.boxData;
+        this[option].series[3].data=residual_data.outliers;
         return data;
       })
       this[chart].setOption(this[option]);

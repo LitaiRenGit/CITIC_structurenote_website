@@ -73,18 +73,24 @@ export default defineConfig({
               redirect: '/dashboard/analysis',
             },
             {
-              name: 'search',
-              icon: 'table',
-              path: '/search',
-              component: './ListTableList',
-            },
-            {
               name: 'overview',
               icon: 'smile',
               // path: '/emptypage',
               path: '/overview',
               // component: './EmptyPage',
               component: './Overview',
+            },
+            {
+              name: 'search',
+              icon: 'table',
+              path: '/search',
+              component: './Search',
+            },
+            {
+              name: 'monitor',
+              icon: 'table',
+              path: '/monitor',
+              component: './Monitor',
             },
             {
               path: '/dashboard',
