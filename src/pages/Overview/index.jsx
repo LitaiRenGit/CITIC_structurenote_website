@@ -175,7 +175,7 @@ class EchartsTest extends Component {
     this.option_statistics_2 = {
       color: palette,
       title: {
-        text: "敲入敲出水平分布",
+        text: "Autocall类敲入敲出水平分布",
       },
       tooltip: {
         trigger: 'axis',

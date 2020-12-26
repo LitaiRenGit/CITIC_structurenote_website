@@ -486,7 +486,7 @@ const TableList = () => {
       valueType: 'textarea',
       hideInTable: false,
       hideInForm: true,
-      hideInSearch: true,
+      // hideInSearch: true,
     },
     {
       title: '距离敲出日天数',
