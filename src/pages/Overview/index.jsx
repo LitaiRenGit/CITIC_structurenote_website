@@ -72,6 +72,7 @@ class EchartsTest extends Component {
           data: [],
         },
         {
+          show: false,
           gridIndex: 1,
           data: [],
         },
